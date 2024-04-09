@@ -7,17 +7,17 @@ int main() {
     if (f == NULL) {
         return -1;
     }
-    
-    char buf[10];
-    fgets(buf, sizeof(buf), stdin);
-    fprintf(f, "%s", buf);
+
+    fprintf(f, "%s", "helloworld");
     fclose(f);
 
     f = fopen("helloworld", "r");
     if (f == NULL) {
         return -1;
     }
-    
+
+    char buf[100];
+
     while(fgets(buf, sizeof(buf), f) != NULL) {
         printf("%s ", buf);
     }
